@@ -1,6 +1,7 @@
-import ko from 'knocout';
+import ko from 'knockout';
 require('./styles/main.scss');
 
+console.log(ko);
 // Here's my data model
 var ViewModel = function(first, last) {
     this.firstName = ko.observable(first);
