@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "/";
+/******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(__webpack_require__.s = 11);
@@ -8570,23 +8570,30 @@ module.exports = g;
 
 /***/ }),
 /* 11 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-__webpack_require__(0);
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_knockout__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_knockout___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_knockout__);
+
 __webpack_require__(1);
 
 // Here's my data model
 var ViewModel = function(first, last) {
-    this.firstName = ko.observable(first);
-    this.lastName = ko.observable(last);
+    this.firstName = __WEBPACK_IMPORTED_MODULE_0_knockout___default.a.observable(first);
+    this.lastName = __WEBPACK_IMPORTED_MODULE_0_knockout___default.a.observable(last);
 
-    this.fullName = ko.pureComputed(function() {
+    this.fullName = __WEBPACK_IMPORTED_MODULE_0_knockout___default.a.pureComputed(function() {
         // Knockout tracks dependencies automatically. It knows that fullName depends on firstName and lastName, because these get called when evaluating fullName.
         return this.firstName() + " " + this.lastName();
     }, this);
 };
 
-ko.applyBindings(new ViewModel("Planet", "Earth"));
+document.addEventListener("DOMContentLoaded", function() {
+  console.log('boo');
+  __WEBPACK_IMPORTED_MODULE_0_knockout___default.a.applyBindings(new ViewModel("Planet", "Earth"));
+});
 
 
 /***/ })

@@ -8,7 +8,8 @@ module.exports = {
 
   output: {
     path: path.resolve(__dirname, 'build'),
-    filename: '[name].bundle.js'
+    filename: '[name].bundle.js',
+    publicPath: '/build',
   },
 
   module: {
@@ -29,6 +30,8 @@ module.exports = {
 
   devServer: {
     contentBase: path.resolve(__dirname, './'),
+    inline: true,
+    stats: 'errors-only',
   },
 
 };

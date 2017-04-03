@@ -1,7 +1,6 @@
 import ko from 'knockout';
 require('./styles/main.scss');
 
-console.log(ko);
 // Here's my data model
 var ViewModel = function(first, last) {
     this.firstName = ko.observable(first);
@@ -13,4 +12,7 @@ var ViewModel = function(first, last) {
     }, this);
 };
 
-ko.applyBindings(new ViewModel("Planet", "Earth"));
+document.addEventListener("DOMContentLoaded", function() {
+  console.log('bos');
+  ko.applyBindings(new ViewModel("Planet", "Earth"));
+});
