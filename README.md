@@ -22,11 +22,12 @@ yarn add global webpack-dev-server
 
 The quick setup is for ease of use and preview purposes. The walkthrough setup is recommended to better understand how to set this us for yourself.
 
+Run the following commands in shell/terminal and a webbrowser should pop-up with a development version running.
 ```sh
-git clone https://github.com/Kaisaurus/FSND_P06.git
-cd FSND_P06
+git clone https://github.com/Kaisaurus/webpack-ko-setup.git
+cd webpack-ko-setup
 yarn install
-webpack-dev-server
+yarn watch
 ```
 ## Walkthrough
 
