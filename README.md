@@ -1,10 +1,20 @@
 # FSND_P06
 
-Currently when run in `webpack-dev-server` shows an error `Uncaught ReferenceError: ko is not defined`
+This is a basic Webpack 2 setup for the Maps project from the Udacity nanodegree.
 
-Hope someone can send me in the right direction to get this working...
+It uses:
+- Babel (so javascript can be written in ES6/ES2015)
+- Sass
+- KnockoutJS
 
-The project can be run using the following commands. (requires yarn and git installed)
+To install you need:
+- a package manager like npm or Yarn (I will use Yarn in the following instructions)
+
+
+## Quick setup
+
+Doing the quicksetup doesn't help you understand the steps to set it up by yourself in the future.
+
 ```sh
 git clone https://github.com/Kaisaurus/FSND_P06.git
 cd FSND_P06
