@@ -1,14 +1,13 @@
 const webpack = require('webpack');
 const path = require('path');
-
-// const is var in the ES2015 syntaxt
+// const is the new syntax for a var that doesn't change
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
 
   entry: {
-    app: './src/js/app.js',
-    about: './src/js/about.js',
+    app: path.join(__dirname, 'src/js', 'app.js'),
+    about: path.join(__dirname, 'src/js', 'about.js'),
   },
 
   output: {
