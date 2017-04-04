@@ -15,7 +15,7 @@ As a prerequisite I recommended you to install:
 - webpack and webpack-dev-server global install. (Global install is recommended so these commands can be used in the terminal.) This can be done with the following command:
 ```sh
 yarn add global webpack 
-yarn add global webpack-dev-server 
+webpack-dev-server --open
 ```
 
 ## Quick setup
