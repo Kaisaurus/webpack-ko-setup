@@ -3,7 +3,10 @@ const path = require('path');
 // const is the new syntax for a var that doesn't change
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 // this plugin refreshes css without refreshing the whole page.
-
+const CommonsChunkPlugin = require('webpack/lib/optimize/CommonsChunkPlugin');
+// CommonsChunkPlugin bundles all commonly shared files in one chunck
+// see plugins section below, or if this doesn't make any sense watch this video:
+// https://youtu.be/-xzWMKuiS2o
 
 module.exports = {
 
@@ -12,13 +15,15 @@ module.exports = {
     // all files used are defined here or the 'import' section of these files
     app: path.join(__dirname, 'src/js', 'app.js'),
     about: path.join(__dirname, 'src/js', 'about.js'),
+    vendor: ['knockout'],
   },
 
   output: {
     // this is where the compiled files will be exported to
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].bundle.js',
+    filename: '[name].[hash].bundle.js',
     // [name] is a handy one to use when there are multiple files
+    // [hash] gives files a unique hash when compiled which will help with cashing
     publicPath: '/dist',
     // this is the public url for the app
     // the dev server will serve the app from this file
@@ -71,7 +76,7 @@ module.exports = {
       // however the output is very different because of the javascript
       filename: 'index.html', // not really needed because index is default
       hash: true,
-      chunks: ['app'],
+      chunks: ['app', 'commons'],
       // chunks specifies which javascript files are used
       inject: 'head',
       // this tells it to inject the js in the head, default is at the end of the body
@@ -80,11 +85,17 @@ module.exports = {
       template: path.join(__dirname, 'src/html', 'index.html'),
       filename: 'about.html',
       hash: true,
-      chunks: ['about'],
+      chunks: ['about', 'commons'],
     }),
 
     // this line activates the HotModuleReplacementPlugin
     new webpack.HotModuleReplacementPlugin(),
+
+    new CommonsChunkPlugin({
+      name: ['commons', 'vendor', 'bootstrap'],
+      // this splits the packages into 3 chunks as described in this video:
+      // https://youtu.be/IQ0i_O749Gg
+    }),
   ],
 
   resolve: {
