@@ -1,5 +1,6 @@
-import '../styles/about.scss';
-import nav from './nav';
+import nav from 'js/nav';
+import 'styles/about';
+
 
 const contentHtml = `
   ${nav()}

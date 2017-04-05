@@ -1,3 +1,5 @@
+import 'styles/nav';
+
 export default () => `
   <nav class="header">
     <ul>

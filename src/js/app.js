@@ -1,7 +1,6 @@
+import nav from 'js/nav';
+import 'styles/main';
 import ko from 'knockout';
-import '../styles/main.scss';
-import nav from './nav';
-
 
 class ViewModel {
   constructor(first, last) {
