@@ -1,14 +1,7 @@
 import nav from 'js/nav';
+import 'styles/common';
 import 'styles/main';
 import ko from 'knockout';
-
-class ViewModel {
-  constructor(first, last) {
-    this.firstName = ko.observable(first);
-    this.lastName = ko.observable(last);
-    this.fullName = ko.pureComputed(() => `${this.firstName()} ${this.lastName()}`);
-  }
-}
 
 const contentHtml = `
   ${nav()}
@@ -17,6 +10,14 @@ const contentHtml = `
   <p>Last name: <input data-bind="value: lastName" /></p>
   <h2>Hello, <span data-bind="text: fullName">&nbsp;</span>!</h2>
 `;
+
+class ViewModel {
+  constructor(first, last) {
+    this.firstName = ko.observable(first);
+    this.lastName = ko.observable(last);
+    this.fullName = ko.pureComputed(() => `${this.firstName()} ${this.lastName()}`);
+  }
+}
 
 document.addEventListener('DOMContentLoaded', () => {
   document.body.querySelector('#main').innerHTML = contentHtml;

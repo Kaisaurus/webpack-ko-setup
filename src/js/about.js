@@ -1,4 +1,5 @@
 import nav from 'js/nav';
+import 'styles/common';
 import 'styles/about';
 
 

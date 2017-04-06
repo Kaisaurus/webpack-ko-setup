@@ -33,12 +33,12 @@ module.exports = {
     rules: [
       // webpack only reads javascript, these loaders help it read other files
       {
-        test: /\.scss$/,
+        test: [/\.scss$/, /\.sass$/],
         loaders: [
           'style-loader',
           'css-loader',
           'resolve-url-loader',
-          // resolves any url() stuff in the css
+          // resolves any urls in the css
           'sass-loader?sourceMap',
           // ?sourceMap is needed because we are useing resolve url before
         ],
@@ -99,7 +99,7 @@ module.exports = {
   ],
 
   resolve: {
-    extensions: ['.json', '.js', '.scss'],
+    extensions: ['.json', '.js', '.scss', 'sass'],
     // this allows us to do imports without specifying the extensions
     modules: [path.resolve(__dirname, 'src'), 'node_modules'],
     // this allows us to import without writing out the complete path
